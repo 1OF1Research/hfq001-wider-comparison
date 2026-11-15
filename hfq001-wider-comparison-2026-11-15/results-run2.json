@@ -1,0 +1,1593 @@
+{
+ "baseline_original_35": [
+  {
+   "agree": true,
+   "case": "V01-base",
+   "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+   "expected": "accept",
+   "observed": "accept",
+   "rule": "base/JCS"
+  },
+  {
+   "agree": true,
+   "case": "V02-float",
+   "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+   "expected": "accept",
+   "observed": "accept",
+   "rule": "JCS-3.2.2.3"
+  },
+  {
+   "agree": true,
+   "case": "V03-int-safe-as-string",
+   "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+   "expected": "accept",
+   "observed": "accept",
+   "rule": "P3"
+  },
+  {
+   "agree": true,
+   "case": "V04-int-unsafe-as-number",
+   "detail": "P3: number token 9007199254740993 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P3"
+  },
+  {
+   "agree": true,
+   "case": "V05-nfc",
+   "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+   "expected": "accept",
+   "observed": "accept",
+   "rule": "P2"
+  },
+  {
+   "agree": true,
+   "case": "V06-nfd",
+   "detail": "P2: string at $.memo: not NFC; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P2"
+  },
+  {
+   "agree": true,
+   "case": "V07-control",
+   "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+   "expected": "accept",
+   "observed": "accept",
+   "rule": "JCS-3.2.2.2"
+  },
+  {
+   "agree": true,
+   "case": "V08-key-order",
+   "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+   "expected": "accept",
+   "observed": "accept",
+   "rule": "JCS-3.2.3"
+  },
+  {
+   "agree": true,
+   "case": "V09-duplicate",
+   "detail": "P1: duplicate member name 'amount_usdc' at $; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P1"
+  },
+  {
+   "agree": true,
+   "case": "V10-nested-proof",
+   "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+   "expected": "accept",
+   "observed": "accept",
+   "rule": "P4"
+  },
+  {
+   "agree": true,
+   "case": "V11-int-unsafe-exponent",
+   "detail": "P3: number token 9.007199254740993e15 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P3"
+  },
+  {
+   "agree": true,
+   "case": "V12-duplicate-escaped",
+   "detail": "P1: duplicate member name 'memo' at $; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P1"
+  },
+  {
+   "agree": true,
+   "case": "V14-lone-surrogate",
+   "detail": "P2: string at $.memo: lone surrogate",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P2"
+  },
+  {
+   "agree": true,
+   "case": "V15-int-boundary",
+   "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+   "expected": "accept",
+   "observed": "accept",
+   "rule": "P3"
+  },
+  {
+   "agree": true,
+   "case": "V16-int-unsafe-negative",
+   "detail": "P3: number token -9007199254740993 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P3"
+  },
+  {
+   "agree": true,
+   "case": "V17-nfd-member-name",
+   "detail": "P2: member name 'café' at $.tags: not NFC; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P2"
+  },
+  {
+   "agree": true,
+   "case": "V18-boundary-exponent",
+   "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+   "expected": "accept",
+   "observed": "accept",
+   "rule": "P3"
+  },
+  {
+   "agree": true,
+   "case": "V19-nonint-above-bound",
+   "detail": "P3: number token 9007199254740991.5 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P3"
+  },
+  {
+   "agree": true,
+   "case": "V20-huge-exponent",
+   "detail": "P3: number token 1e400 at $.amount_atomic exceeds 2^53-1",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P3"
+  },
+  {
+   "agree": true,
+   "case": "V13-top-level-proof",
+   "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+   "expected": "accept",
+   "observed": "accept",
+   "rule": "P4"
+  },
+  {
+   "agree": true,
+   "case": "N01-mutated-bytes",
+   "detail": "mutated bytes: original signers no longer recover",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "signature"
+  },
+  {
+   "agree": true,
+   "case": "N02-wrong-signer",
+   "detail": "recovers to 0x03baf76f904be65a14c8ec0d33d081a4cfdb7f86, not the claimed 0x480fF8912Ace464dAa57bE068F852aDFdb97E836",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "signer"
+  },
+  {
+   "agree": true,
+   "case": "N03-high-s",
+   "detail": "both signatures recover to their signers; both are high-s, so only P5 rejects",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P5"
+  },
+  {
+   "agree": true,
+   "case": "N04-nested-proof-altered",
+   "detail": "altered nested proof changes the digest; signer 0x480fF8912Ace464dAa57bE068F852aDFdb97E836 recovered 0xb468907707528ff2cbb5935096a93dd06d9d4dd2",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P4"
+  },
+  {
+   "agree": true,
+   "case": "N05-framing-not-pinned",
+   "detail": "under the pinned hex-text framing it does not recover; under the other framing (digest-bytes) it does — a verifier with fallback would wrongly accept",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P7"
+  },
+  {
+   "agree": true,
+   "case": "N06-framing-not-pinned-mirror",
+   "detail": "under the pinned digest-bytes framing it does not recover; under the other framing (hex-text) it does — a verifier with fallback would wrongly accept",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P7"
+  },
+  {
+   "agree": true,
+   "case": "S01-step-1",
+   "detail": "all checks pass; expected_reason: accepted",
+   "expected": "accept",
+   "observed": "accept",
+   "rule": "P6"
+  },
+  {
+   "agree": true,
+   "case": "S01-step-2",
+   "detail": "P6d replay of (signer, nonce); expected_reason: P6d",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P6"
+  },
+  {
+   "agree": true,
+   "case": "S01-step-3",
+   "detail": "all checks pass; expected_reason: accepted",
+   "expected": "accept",
+   "observed": "accept",
+   "rule": "P6"
+  },
+  {
+   "agree": true,
+   "case": "S01-step-4",
+   "detail": "P6b audience; expected_reason: P6b",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P6"
+  },
+  {
+   "agree": true,
+   "case": "S01-step-5",
+   "detail": "P6a domain; expected_reason: P6a",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P6"
+  },
+  {
+   "agree": true,
+   "case": "S01-step-6",
+   "detail": "P6c chain_id; expected_reason: P6c",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P6"
+  },
+  {
+   "agree": true,
+   "case": "S01-step-7",
+   "detail": "P6d nonce missing; expected_reason: P6d",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P6"
+  },
+  {
+   "agree": true,
+   "case": "S01-step-8",
+   "detail": "P6a domain; expected_reason: P6a",
+   "expected": "reject",
+   "observed": "reject",
+   "rule": "P6"
+  },
+  {
+   "agree": true,
+   "case": "S01-step-9",
+   "detail": "all checks pass; expected_reason: accepted",
+   "expected": "accept",
+   "observed": "accept",
+   "rule": "P6"
+  }
+ ],
+ "byte_layer": {
+  "CHAL": [
+   {
+    "agree": true,
+    "case": "V01-base",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "base/JCS"
+   },
+   {
+    "agree": true,
+    "case": "V02-float",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "JCS-3.2.2.3"
+   },
+   {
+    "agree": true,
+    "case": "V03-int-safe-as-string",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V04-int-unsafe-as-number",
+    "detail": "P3: number token 9007199254740993 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V05-nfc",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P2"
+   },
+   {
+    "agree": true,
+    "case": "V06-nfd",
+    "detail": "P2: string at $.memo: not NFC; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P2"
+   },
+   {
+    "agree": true,
+    "case": "V07-control",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "JCS-3.2.2.2"
+   },
+   {
+    "agree": true,
+    "case": "V08-key-order",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "JCS-3.2.3"
+   },
+   {
+    "agree": true,
+    "case": "V09-duplicate",
+    "detail": "P1: duplicate member name 'amount_usdc' at $; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P1"
+   },
+   {
+    "agree": true,
+    "case": "V10-nested-proof",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P4"
+   },
+   {
+    "agree": true,
+    "case": "V11-int-unsafe-exponent",
+    "detail": "P3: number token 9.007199254740993e15 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V12-duplicate-escaped",
+    "detail": "P1: duplicate member name 'memo' at $; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P1"
+   },
+   {
+    "agree": true,
+    "case": "V14-lone-surrogate",
+    "detail": "P2: string at $.memo: lone surrogate",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P2"
+   },
+   {
+    "agree": true,
+    "case": "V15-int-boundary",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V16-int-unsafe-negative",
+    "detail": "P3: number token -9007199254740993 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V17-nfd-member-name",
+    "detail": "P2: member name 'café' at $.tags: not NFC; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P2"
+   },
+   {
+    "agree": true,
+    "case": "V18-boundary-exponent",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V19-nonint-above-bound",
+    "detail": "P3: number token 9007199254740991.5 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V20-huge-exponent",
+    "detail": "P3: number token 1e400 at $.amount_atomic exceeds 2^53-1",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V13-top-level-proof",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P4"
+   },
+   {
+    "agree": true,
+    "case": "N01-mutated-bytes",
+    "detail": "mutated bytes: original signers no longer recover",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "signature"
+   },
+   {
+    "agree": true,
+    "case": "N02-wrong-signer",
+    "detail": "recovers to 0x03baf76f904be65a14c8ec0d33d081a4cfdb7f86, not the claimed 0x480fF8912Ace464dAa57bE068F852aDFdb97E836",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "signer"
+   },
+   {
+    "agree": true,
+    "case": "N03-high-s",
+    "detail": "both signatures recover to their signers; both are high-s, so only P5 rejects",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P5"
+   },
+   {
+    "agree": true,
+    "case": "N04-nested-proof-altered",
+    "detail": "altered nested proof changes the digest; signer 0x480fF8912Ace464dAa57bE068F852aDFdb97E836 recovered 0xb468907707528ff2cbb5935096a93dd06d9d4dd2",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P4"
+   },
+   {
+    "agree": true,
+    "case": "N05-framing-not-pinned",
+    "detail": "under the pinned hex-text framing it does not recover; under the other framing (digest-bytes) it does — a verifier with fallback would wrongly accept",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P7"
+   },
+   {
+    "agree": true,
+    "case": "N06-framing-not-pinned-mirror",
+    "detail": "under the pinned digest-bytes framing it does not recover; under the other framing (hex-text) it does — a verifier with fallback would wrongly accept",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P7"
+   }
+  ],
+  "EXP": [
+   {
+    "agree": true,
+    "case": "V01-base",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "base/JCS"
+   },
+   {
+    "agree": true,
+    "case": "V02-float",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "JCS-3.2.2.3"
+   },
+   {
+    "agree": true,
+    "case": "V03-int-safe-as-string",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V04-int-unsafe-as-number",
+    "detail": "P3: number token 9007199254740993 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V05-nfc",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P2"
+   },
+   {
+    "agree": true,
+    "case": "V06-nfd",
+    "detail": "P2: string at $.memo: not NFC; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P2"
+   },
+   {
+    "agree": true,
+    "case": "V07-control",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "JCS-3.2.2.2"
+   },
+   {
+    "agree": true,
+    "case": "V08-key-order",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "JCS-3.2.3"
+   },
+   {
+    "agree": true,
+    "case": "V09-duplicate",
+    "detail": "P1: duplicate member name 'amount_usdc' at $; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P1"
+   },
+   {
+    "agree": true,
+    "case": "V10-nested-proof",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P4"
+   },
+   {
+    "agree": true,
+    "case": "V11-int-unsafe-exponent",
+    "detail": "P3: number token 9.007199254740993e15 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V12-duplicate-escaped",
+    "detail": "P1: duplicate member name 'memo' at $; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P1"
+   },
+   {
+    "agree": true,
+    "case": "V14-lone-surrogate",
+    "detail": "P2: string at $.memo: lone surrogate",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P2"
+   },
+   {
+    "agree": true,
+    "case": "V15-int-boundary",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V16-int-unsafe-negative",
+    "detail": "P3: number token -9007199254740993 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V17-nfd-member-name",
+    "detail": "P2: member name 'café' at $.tags: not NFC; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P2"
+   },
+   {
+    "agree": true,
+    "case": "V18-boundary-exponent",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V19-nonint-above-bound",
+    "detail": "P3: number token 9007199254740991.5 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V20-huge-exponent",
+    "detail": "P3: number token 1e400 at $.amount_atomic exceeds 2^53-1",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V13-top-level-proof",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P4"
+   },
+   {
+    "agree": true,
+    "case": "N01-mutated-bytes",
+    "detail": "mutated bytes: original signers no longer recover",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "signature"
+   },
+   {
+    "agree": true,
+    "case": "N02-wrong-signer",
+    "detail": "recovers to 0x03baf76f904be65a14c8ec0d33d081a4cfdb7f86, not the claimed 0x480fF8912Ace464dAa57bE068F852aDFdb97E836",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "signer"
+   },
+   {
+    "agree": true,
+    "case": "N03-high-s",
+    "detail": "both signatures recover to their signers; both are high-s, so only P5 rejects",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P5"
+   },
+   {
+    "agree": true,
+    "case": "N04-nested-proof-altered",
+    "detail": "altered nested proof changes the digest; signer 0x480fF8912Ace464dAa57bE068F852aDFdb97E836 recovered 0xb468907707528ff2cbb5935096a93dd06d9d4dd2",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P4"
+   },
+   {
+    "agree": true,
+    "case": "N05-framing-not-pinned",
+    "detail": "under the pinned hex-text framing it does not recover; under the other framing (digest-bytes) it does — a verifier with fallback would wrongly accept",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P7"
+   },
+   {
+    "agree": true,
+    "case": "N06-framing-not-pinned-mirror",
+    "detail": "under the pinned digest-bytes framing it does not recover; under the other framing (hex-text) it does — a verifier with fallback would wrongly accept",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P7"
+   }
+  ],
+  "HYB": [
+   {
+    "agree": true,
+    "case": "V01-base",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "base/JCS"
+   },
+   {
+    "agree": true,
+    "case": "V02-float",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "JCS-3.2.2.3"
+   },
+   {
+    "agree": true,
+    "case": "V03-int-safe-as-string",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V04-int-unsafe-as-number",
+    "detail": "P3: number token 9007199254740993 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V05-nfc",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P2"
+   },
+   {
+    "agree": true,
+    "case": "V06-nfd",
+    "detail": "P2: string at $.memo: not NFC; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P2"
+   },
+   {
+    "agree": true,
+    "case": "V07-control",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "JCS-3.2.2.2"
+   },
+   {
+    "agree": true,
+    "case": "V08-key-order",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "JCS-3.2.3"
+   },
+   {
+    "agree": true,
+    "case": "V09-duplicate",
+    "detail": "P1: duplicate member name 'amount_usdc' at $; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P1"
+   },
+   {
+    "agree": true,
+    "case": "V10-nested-proof",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P4"
+   },
+   {
+    "agree": true,
+    "case": "V11-int-unsafe-exponent",
+    "detail": "P3: number token 9.007199254740993e15 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V12-duplicate-escaped",
+    "detail": "P1: duplicate member name 'memo' at $; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P1"
+   },
+   {
+    "agree": true,
+    "case": "V14-lone-surrogate",
+    "detail": "P2: string at $.memo: lone surrogate",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P2"
+   },
+   {
+    "agree": true,
+    "case": "V15-int-boundary",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V16-int-unsafe-negative",
+    "detail": "P3: number token -9007199254740993 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V17-nfd-member-name",
+    "detail": "P2: member name 'café' at $.tags: not NFC; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P2"
+   },
+   {
+    "agree": true,
+    "case": "V18-boundary-exponent",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V19-nonint-above-bound",
+    "detail": "P3: number token 9007199254740991.5 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V20-huge-exponent",
+    "detail": "P3: number token 1e400 at $.amount_atomic exceeds 2^53-1",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V13-top-level-proof",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P4"
+   },
+   {
+    "agree": true,
+    "case": "N01-mutated-bytes",
+    "detail": "mutated bytes: original signers no longer recover",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "signature"
+   },
+   {
+    "agree": true,
+    "case": "N02-wrong-signer",
+    "detail": "recovers to 0x03baf76f904be65a14c8ec0d33d081a4cfdb7f86, not the claimed 0x480fF8912Ace464dAa57bE068F852aDFdb97E836",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "signer"
+   },
+   {
+    "agree": true,
+    "case": "N03-high-s",
+    "detail": "both signatures recover to their signers; both are high-s, so only P5 rejects",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P5"
+   },
+   {
+    "agree": true,
+    "case": "N04-nested-proof-altered",
+    "detail": "altered nested proof changes the digest; signer 0x480fF8912Ace464dAa57bE068F852aDFdb97E836 recovered 0xb468907707528ff2cbb5935096a93dd06d9d4dd2",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P4"
+   },
+   {
+    "agree": true,
+    "case": "N05-framing-not-pinned",
+    "detail": "under the pinned hex-text framing it does not recover; under the other framing (digest-bytes) it does — a verifier with fallback would wrongly accept",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P7"
+   },
+   {
+    "agree": true,
+    "case": "N06-framing-not-pinned-mirror",
+    "detail": "under the pinned digest-bytes framing it does not recover; under the other framing (hex-text) it does — a verifier with fallback would wrongly accept",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P7"
+   }
+  ],
+  "P6": [
+   {
+    "agree": true,
+    "case": "V01-base",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "base/JCS"
+   },
+   {
+    "agree": true,
+    "case": "V02-float",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "JCS-3.2.2.3"
+   },
+   {
+    "agree": true,
+    "case": "V03-int-safe-as-string",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V04-int-unsafe-as-number",
+    "detail": "P3: number token 9007199254740993 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V05-nfc",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P2"
+   },
+   {
+    "agree": true,
+    "case": "V06-nfd",
+    "detail": "P2: string at $.memo: not NFC; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P2"
+   },
+   {
+    "agree": true,
+    "case": "V07-control",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "JCS-3.2.2.2"
+   },
+   {
+    "agree": true,
+    "case": "V08-key-order",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "JCS-3.2.3"
+   },
+   {
+    "agree": true,
+    "case": "V09-duplicate",
+    "detail": "P1: duplicate member name 'amount_usdc' at $; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P1"
+   },
+   {
+    "agree": true,
+    "case": "V10-nested-proof",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P4"
+   },
+   {
+    "agree": true,
+    "case": "V11-int-unsafe-exponent",
+    "detail": "P3: number token 9.007199254740993e15 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V12-duplicate-escaped",
+    "detail": "P1: duplicate member name 'memo' at $; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P1"
+   },
+   {
+    "agree": true,
+    "case": "V14-lone-surrogate",
+    "detail": "P2: string at $.memo: lone surrogate",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P2"
+   },
+   {
+    "agree": true,
+    "case": "V15-int-boundary",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V16-int-unsafe-negative",
+    "detail": "P3: number token -9007199254740993 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V17-nfd-member-name",
+    "detail": "P2: member name 'café' at $.tags: not NFC; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P2"
+   },
+   {
+    "agree": true,
+    "case": "V18-boundary-exponent",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V19-nonint-above-bound",
+    "detail": "P3: number token 9007199254740991.5 at $.amount_atomic exceeds 2^53-1; lenient bytes signature check: valid (signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE)",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V20-huge-exponent",
+    "detail": "P3: number token 1e400 at $.amount_atomic exceeds 2^53-1",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P3"
+   },
+   {
+    "agree": true,
+    "case": "V13-top-level-proof",
+    "detail": "canonical bytes + digest identical; signatures recover for 0x480fF8912Ace464dAa57bE068F852aDFdb97E836,0xF02aC3ec3DfB75AFd9Ec9962d7f3bdeDe0Cc81FE",
+    "expected": "accept",
+    "observed": "accept",
+    "rule": "P4"
+   },
+   {
+    "agree": true,
+    "case": "N01-mutated-bytes",
+    "detail": "mutated bytes: original signers no longer recover",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "signature"
+   },
+   {
+    "agree": true,
+    "case": "N02-wrong-signer",
+    "detail": "recovers to 0x03baf76f904be65a14c8ec0d33d081a4cfdb7f86, not the claimed 0x480fF8912Ace464dAa57bE068F852aDFdb97E836",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "signer"
+   },
+   {
+    "agree": true,
+    "case": "N03-high-s",
+    "detail": "both signatures recover to their signers; both are high-s, so only P5 rejects",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P5"
+   },
+   {
+    "agree": true,
+    "case": "N04-nested-proof-altered",
+    "detail": "altered nested proof changes the digest; signer 0x480fF8912Ace464dAa57bE068F852aDFdb97E836 recovered 0xb468907707528ff2cbb5935096a93dd06d9d4dd2",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P4"
+   },
+   {
+    "agree": true,
+    "case": "N05-framing-not-pinned",
+    "detail": "under the pinned hex-text framing it does not recover; under the other framing (digest-bytes) it does — a verifier with fallback would wrongly accept",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P7"
+   },
+   {
+    "agree": true,
+    "case": "N06-framing-not-pinned-mirror",
+    "detail": "under the pinned digest-bytes framing it does not recover; under the other framing (hex-text) it does — a verifier with fallback would wrongly accept",
+    "expected": "reject",
+    "observed": "reject",
+    "rule": "P7"
+   }
+  ]
+ },
+ "gate": [
+  "APPB finite 24/24, non-finite refused 2/2",
+  "SORT 3.2.3 PASS (value order as the RFC lists it)",
+  "BYTES 3.2.4 PASS (hex-identical to the RFC)",
+  "GATE: PASS"
+ ],
+ "s01": {
+  "CHAL": [
+   {
+    "agree": true,
+    "case": "S01-step-1",
+    "detail": "challenge answered and consumed",
+    "expected": "accept",
+    "observed": "accept"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-2",
+    "detail": "challenge already consumed",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-3",
+    "detail": "challenge answered and consumed",
+    "expected": "accept",
+    "observed": "accept"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-4",
+    "detail": "P6b audience is not the relying party",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-5",
+    "detail": "P6a domain missing or unexpected",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-6",
+    "detail": "P6c chain_id not the required one",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-7",
+    "detail": "clause (d): nonce missing",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-8",
+    "detail": "P6a domain missing or unexpected",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-9",
+    "detail": "challenge answered and consumed",
+    "expected": "accept",
+    "observed": "accept"
+   }
+  ],
+  "EXP": [
+   {
+    "agree": true,
+    "case": "S01-step-1",
+    "detail": "within signed window",
+    "expected": "accept",
+    "observed": "accept"
+   },
+   {
+    "agree": false,
+    "case": "S01-step-2",
+    "detail": "within signed window",
+    "expected": "reject",
+    "observed": "accept"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-3",
+    "detail": "within signed window",
+    "expected": "accept",
+    "observed": "accept"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-4",
+    "detail": "P6b audience is not the relying party",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-5",
+    "detail": "P6a domain missing or unexpected",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-6",
+    "detail": "P6c chain_id not the required one",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-7",
+    "detail": "clause (d): nonce missing",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-8",
+    "detail": "P6a domain missing or unexpected",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-9",
+    "detail": "within signed window",
+    "expected": "accept",
+    "observed": "accept"
+   }
+  ],
+  "HYB": [
+   {
+    "agree": true,
+    "case": "S01-step-1",
+    "detail": "accepted; (signer, nonce) recorded",
+    "expected": "accept",
+    "observed": "accept"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-2",
+    "detail": "P6d replay of (signer, nonce)",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-3",
+    "detail": "accepted; (signer, nonce) recorded",
+    "expected": "accept",
+    "observed": "accept"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-4",
+    "detail": "P6b audience is not the relying party",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-5",
+    "detail": "P6a domain missing or unexpected",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-6",
+    "detail": "P6c chain_id not the required one",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-7",
+    "detail": "clause (d): nonce missing",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-8",
+    "detail": "P6a domain missing or unexpected",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-9",
+    "detail": "accepted; (signer, nonce) recorded",
+    "expected": "accept",
+    "observed": "accept"
+   }
+  ],
+  "P6": [
+   {
+    "agree": true,
+    "case": "S01-step-1",
+    "detail": "accepted; (signer, nonce) recorded",
+    "expected": "accept",
+    "observed": "accept"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-2",
+    "detail": "P6d replay of (signer, nonce)",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-3",
+    "detail": "accepted; (signer, nonce) recorded",
+    "expected": "accept",
+    "observed": "accept"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-4",
+    "detail": "P6b audience is not the relying party",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-5",
+    "detail": "P6a domain missing or unexpected",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-6",
+    "detail": "P6c chain_id not the required one",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-7",
+    "detail": "clause (d): nonce missing",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-8",
+    "detail": "P6a domain missing or unexpected",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "S01-step-9",
+    "detail": "accepted; (signer, nonce) recorded",
+    "expected": "accept",
+    "observed": "accept"
+   }
+  ]
+ },
+ "w": {
+  "CHAL": [
+   {
+    "agree": true,
+    "case": "W04-challenge-replay",
+    "detail": "same challenge answered twice",
+    "expected": "accept/reject",
+    "observed": "accept/reject"
+   },
+   {
+    "agree": true,
+    "case": "W05i-cross-audience",
+    "detail": "P6b audience is not the relying party",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "W05ii-binding-mismatch",
+    "detail": "challenge bound to a different domain/audience/chain than the receipt",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "W05iii-cross-domain",
+    "detail": "challenge bound to a different domain/audience/chain than the receipt",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "W09d-no-challenge",
+    "detail": "clause (d): no challenge answered",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "W09e-unknown-challenge",
+    "detail": "challenge unknown to this relying party",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "W09f-expired-challenge",
+    "detail": "challenge expired",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "W11-restart-fail-closed",
+    "detail": "challenge unknown to this relying party — availability cost, not a hole",
+    "expected": "reject",
+    "observed": "reject"
+   }
+  ],
+  "EXP": [
+   {
+    "agree": true,
+    "case": "W01-in-window-replay",
+    "detail": "same receipt twice inside window",
+    "expected": "accept/accept",
+    "observed": "accept/accept"
+   },
+   {
+    "agree": true,
+    "case": "W02-post-window-replay",
+    "detail": "second presentation past exp (P6: past nothing — rejection cause is the store; recorded in log detail)",
+    "expected": "accept/reject",
+    "observed": "accept/reject"
+   },
+   {
+    "agree": true,
+    "case": "W07-expiry-boundary",
+    "detail": "exp is exclusive: T0+299 in, T0+300 out",
+    "expected": "accept/reject",
+    "observed": "accept/reject"
+   },
+   {
+    "agree": true,
+    "case": "W08i-skew-behind",
+    "detail": "iat beyond leeway in the future",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "W08ii-skew-ahead",
+    "detail": "expired (now >= exp)",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "W09a-no-exp",
+    "detail": "clause (d): iat/exp missing",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "W09b-no-iat",
+    "detail": "clause (d): iat/exp missing",
+    "expected": "reject",
+    "observed": "reject"
+   }
+  ],
+  "HYB": [
+   {
+    "agree": true,
+    "case": "W01-in-window-replay",
+    "detail": "same receipt twice inside window",
+    "expected": "accept/reject",
+    "observed": "accept/reject"
+   },
+   {
+    "agree": true,
+    "case": "W02-post-window-replay",
+    "detail": "second presentation past exp (P6: past nothing — rejection cause is the store; recorded in log detail)",
+    "expected": "accept/reject",
+    "observed": "accept/reject"
+   },
+   {
+    "agree": true,
+    "case": "W06-state-loss+expiry",
+    "detail": "wipe before each replay: in-window replay lands (state gone), post-expiry replay rejected on expiry alone",
+    "expected": "accept/accept/reject",
+    "observed": "accept/accept/reject"
+   },
+   {
+    "agree": true,
+    "case": "W07-expiry-boundary",
+    "detail": "exp is exclusive: T0+299 in, T0+300 out",
+    "expected": "accept/reject",
+    "observed": "accept/reject"
+   },
+   {
+    "agree": true,
+    "case": "W09c-hyb-no-exp",
+    "detail": "clause (d): iat/exp missing",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "W10-pair-keying",
+    "detail": "same nonce, other signer: the key is the pair",
+    "expected": "accept/accept",
+    "observed": "accept/accept"
+   },
+   {
+    "agree": true,
+    "case": "W12-long-lived-replay",
+    "detail": "30 days later, store intact: both reject",
+    "expected": "accept/reject",
+    "observed": "accept/reject"
+   }
+  ],
+  "P6": [
+   {
+    "agree": true,
+    "case": "W01-in-window-replay",
+    "detail": "same receipt twice inside window",
+    "expected": "accept/reject",
+    "observed": "accept/reject"
+   },
+   {
+    "agree": true,
+    "case": "W02-post-window-replay",
+    "detail": "second presentation past exp (P6: past nothing — rejection cause is the store; recorded in log detail)",
+    "expected": "accept/reject",
+    "observed": "accept/reject"
+   },
+   {
+    "agree": true,
+    "case": "W03-state-loss",
+    "detail": "store wiped between presentations; P6d protection is gone with the state (the durability clause is what failed, and it is operational, not receipt-layer)",
+    "expected": "accept/accept",
+    "observed": "accept/accept"
+   },
+   {
+    "agree": true,
+    "case": "W06-control-no-expiry",
+    "detail": "same wipes under P6: no expiry exists to reject on",
+    "expected": "accept/accept/accept",
+    "observed": "accept/accept/accept"
+   },
+   {
+    "agree": true,
+    "case": "W12-long-lived-replay",
+    "detail": "30 days later, store intact: both reject",
+    "expected": "accept/reject",
+    "observed": "accept/reject"
+   }
+  ]
+ }
+}
