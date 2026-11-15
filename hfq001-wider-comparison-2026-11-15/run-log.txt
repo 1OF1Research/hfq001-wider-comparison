@@ -1,0 +1,72 @@
+APPB finite 24/24, non-finite refused 2/2
+SORT 3.2.3 PASS (value order as the RFC lists it)
+BYTES 3.2.4 PASS (hex-identical to the RFC)
+GATE: PASS
+BASELINE original harness on file receipts: 35/35 agree
+P6    byte layer: 26/26 agree with the file
+EXP   byte layer: 26/26 agree with the file
+CHAL  byte layer: 26/26 agree with the file
+HYB   byte layer: 26/26 agree with the file
+P6    S01-step-1                   exp=accept                 obs=accept AGREE :: accepted; (signer, nonce) recorded
+P6    S01-step-2                   exp=reject                 obs=reject AGREE :: P6d replay of (signer, nonce)
+P6    S01-step-3                   exp=accept                 obs=accept AGREE :: accepted; (signer, nonce) recorded
+P6    S01-step-4                   exp=reject                 obs=reject AGREE :: P6b audience is not the relying party
+P6    S01-step-5                   exp=reject                 obs=reject AGREE :: P6a domain missing or unexpected
+P6    S01-step-6                   exp=reject                 obs=reject AGREE :: P6c chain_id not the required one
+P6    S01-step-7                   exp=reject                 obs=reject AGREE :: clause (d): nonce missing
+P6    S01-step-8                   exp=reject                 obs=reject AGREE :: P6a domain missing or unexpected
+P6    S01-step-9                   exp=accept                 obs=accept AGREE :: accepted; (signer, nonce) recorded
+EXP   S01-step-1                   exp=accept                 obs=accept AGREE :: within signed window
+EXP   S01-step-2                   exp=reject                 obs=accept DIVERGE :: within signed window
+EXP   S01-step-3                   exp=accept                 obs=accept AGREE :: within signed window
+EXP   S01-step-4                   exp=reject                 obs=reject AGREE :: P6b audience is not the relying party
+EXP   S01-step-5                   exp=reject                 obs=reject AGREE :: P6a domain missing or unexpected
+EXP   S01-step-6                   exp=reject                 obs=reject AGREE :: P6c chain_id not the required one
+EXP   S01-step-7                   exp=reject                 obs=reject AGREE :: clause (d): nonce missing
+EXP   S01-step-8                   exp=reject                 obs=reject AGREE :: P6a domain missing or unexpected
+EXP   S01-step-9                   exp=accept                 obs=accept AGREE :: within signed window
+CHAL  S01-step-1                   exp=accept                 obs=accept AGREE :: challenge answered and consumed
+CHAL  S01-step-2                   exp=reject                 obs=reject AGREE :: challenge already consumed
+CHAL  S01-step-3                   exp=accept                 obs=accept AGREE :: challenge answered and consumed
+CHAL  S01-step-4                   exp=reject                 obs=reject AGREE :: P6b audience is not the relying party
+CHAL  S01-step-5                   exp=reject                 obs=reject AGREE :: P6a domain missing or unexpected
+CHAL  S01-step-6                   exp=reject                 obs=reject AGREE :: P6c chain_id not the required one
+CHAL  S01-step-7                   exp=reject                 obs=reject AGREE :: clause (d): nonce missing
+CHAL  S01-step-8                   exp=reject                 obs=reject AGREE :: P6a domain missing or unexpected
+CHAL  S01-step-9                   exp=accept                 obs=accept AGREE :: challenge answered and consumed
+HYB   S01-step-1                   exp=accept                 obs=accept AGREE :: accepted; (signer, nonce) recorded
+HYB   S01-step-2                   exp=reject                 obs=reject AGREE :: P6d replay of (signer, nonce)
+HYB   S01-step-3                   exp=accept                 obs=accept AGREE :: accepted; (signer, nonce) recorded
+HYB   S01-step-4                   exp=reject                 obs=reject AGREE :: P6b audience is not the relying party
+HYB   S01-step-5                   exp=reject                 obs=reject AGREE :: P6a domain missing or unexpected
+HYB   S01-step-6                   exp=reject                 obs=reject AGREE :: P6c chain_id not the required one
+HYB   S01-step-7                   exp=reject                 obs=reject AGREE :: clause (d): nonce missing
+HYB   S01-step-8                   exp=reject                 obs=reject AGREE :: P6a domain missing or unexpected
+HYB   S01-step-9                   exp=accept                 obs=accept AGREE :: accepted; (signer, nonce) recorded
+P6    W01-in-window-replay         exp=accept/reject          obs=accept/reject AGREE :: same receipt twice inside window
+EXP   W01-in-window-replay         exp=accept/accept          obs=accept/accept AGREE :: same receipt twice inside window
+HYB   W01-in-window-replay         exp=accept/reject          obs=accept/reject AGREE :: same receipt twice inside window
+P6    W02-post-window-replay       exp=accept/reject          obs=accept/reject AGREE :: second presentation past exp (P6: past nothing — rejection cause is the store; recorded in log detail)
+EXP   W02-post-window-replay       exp=accept/reject          obs=accept/reject AGREE :: second presentation past exp (P6: past nothing — rejection cause is the store; recorded in log detail)
+HYB   W02-post-window-replay       exp=accept/reject          obs=accept/reject AGREE :: second presentation past exp (P6: past nothing — rejection cause is the store; recorded in log detail)
+P6    W03-state-loss               exp=accept/accept          obs=accept/accept AGREE :: store wiped between presentations; P6d protection is gone with the state (the durability clause is what failed, and it is operational, not receipt-layer)
+CHAL  W04-challenge-replay         exp=accept/reject          obs=accept/reject AGREE :: same challenge answered twice
+CHAL  W05i-cross-audience          exp=reject                 obs=reject AGREE :: P6b audience is not the relying party
+CHAL  W05ii-binding-mismatch       exp=reject                 obs=reject AGREE :: challenge bound to a different domain/audience/chain than the receipt
+CHAL  W05iii-cross-domain          exp=reject                 obs=reject AGREE :: challenge bound to a different domain/audience/chain than the receipt
+HYB   W06-state-loss+expiry        exp=accept/accept/reject   obs=accept/accept/reject AGREE :: wipe before each replay: in-window replay lands (state gone), post-expiry replay rejected on expiry alone
+P6    W06-control-no-expiry        exp=accept/accept/accept   obs=accept/accept/accept AGREE :: same wipes under P6: no expiry exists to reject on
+EXP   W07-expiry-boundary          exp=accept/reject          obs=accept/reject AGREE :: exp is exclusive: T0+299 in, T0+300 out
+HYB   W07-expiry-boundary          exp=accept/reject          obs=accept/reject AGREE :: exp is exclusive: T0+299 in, T0+300 out
+EXP   W08i-skew-behind             exp=reject                 obs=reject AGREE :: iat beyond leeway in the future
+EXP   W08ii-skew-ahead             exp=reject                 obs=reject AGREE :: expired (now >= exp)
+EXP   W09a-no-exp                  exp=reject                 obs=reject AGREE :: clause (d): iat/exp missing
+EXP   W09b-no-iat                  exp=reject                 obs=reject AGREE :: clause (d): iat/exp missing
+HYB   W09c-hyb-no-exp              exp=reject                 obs=reject AGREE :: clause (d): iat/exp missing
+CHAL  W09d-no-challenge            exp=reject                 obs=reject AGREE :: clause (d): no challenge answered
+CHAL  W09e-unknown-challenge       exp=reject                 obs=reject AGREE :: challenge unknown to this relying party
+CHAL  W09f-expired-challenge       exp=reject                 obs=reject AGREE :: challenge expired
+HYB   W10-pair-keying              exp=accept/accept          obs=accept/accept AGREE :: same nonce, other signer: the key is the pair
+CHAL  W11-restart-fail-closed      exp=reject                 obs=reject AGREE :: challenge unknown to this relying party — availability cost, not a hole
+P6    W12-long-lived-replay        exp=accept/reject          obs=accept/reject AGREE :: 30 days later, store intact: both reject
+HYB   W12-long-lived-replay        exp=accept/reject          obs=accept/reject AGREE :: 30 days later, store intact: both reject
