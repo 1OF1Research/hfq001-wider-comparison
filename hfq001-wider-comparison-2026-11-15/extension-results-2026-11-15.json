@@ -1,0 +1,187 @@
+{
+ "gate": [
+  "APPB finite 24/24, non-finite refused 2/2",
+  "SORT 3.2.3 PASS (value order as the RFC lists it)",
+  "BYTES 3.2.4 PASS (hex-identical to the RFC)",
+  "GATE: PASS"
+ ],
+ "x1": {
+  "HYB": [
+   {
+    "agree": true,
+    "case": "X1-pruned-reuse",
+    "detail": "pair pruned at T0+301 (exp passed); new receipt reuses the nonce in a fresh window: accepted; (signer, nonce) recorded; the OLD receipt again: expired (now >= exp)",
+    "expected": "accept/accept/reject",
+    "observed": "accept/accept/reject"
+   },
+   {
+    "agree": true,
+    "case": "X1-unpruned-control",
+    "detail": "no pruning taken; isolates pruning as the cause of the pruned arm's second accept",
+    "expected": "accept/reject",
+    "observed": "accept/reject"
+   }
+  ],
+  "P6": [
+   {
+    "agree": true,
+    "case": "X1-p6-control",
+    "detail": "P6 keeps every pair; a new receipt reusing the nonce is refused on the recorded pair",
+    "expected": "accept/reject",
+    "observed": "accept/reject"
+   }
+  ]
+ },
+ "x2": {
+  "EXP": [
+   {
+    "agree": true,
+    "case": "X2a-at-cap",
+    "detail": "exp-iat = 300 = CAP; exceeds is strict :: within signed window",
+    "expected": "accept",
+    "observed": "accept"
+   },
+   {
+    "agree": true,
+    "case": "X2b-one-over",
+    "detail": "exp-iat = 301 > CAP, presented inside its window :: clause (d): exp-iat window 301s exceeds RP cap 300s",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "X2c-long-window",
+    "detail": "exp-iat = 30 days > CAP :: clause (d): exp-iat window 2592000s exceeds RP cap 300s",
+    "expected": "reject",
+    "observed": "reject"
+   }
+  ],
+  "HYB": [
+   {
+    "agree": true,
+    "case": "X2a-at-cap",
+    "detail": "exp-iat = 300 = CAP; exceeds is strict :: accepted; (signer, nonce) recorded",
+    "expected": "accept",
+    "observed": "accept"
+   },
+   {
+    "agree": true,
+    "case": "X2b-one-over",
+    "detail": "exp-iat = 301 > CAP, presented inside its window :: clause (d): exp-iat window 301s exceeds RP cap 300s",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "X2b-store-untouched",
+    "detail": "a cap rejection records no pair (state changes only on accept)",
+    "expected": "absent",
+    "observed": "absent"
+   },
+   {
+    "agree": true,
+    "case": "X2c-long-window",
+    "detail": "exp-iat = 30 days > CAP :: clause (d): exp-iat window 2592000s exceeds RP cap 300s",
+    "expected": "reject",
+    "observed": "reject"
+   }
+  ]
+ },
+ "x2d": {
+  "EXP": [
+   {
+    "agree": true,
+    "case": "W01-in-window-replay",
+    "detail": "capped RP vs uncapped results-run1.json",
+    "expected": "accept/accept",
+    "observed": "accept/accept"
+   },
+   {
+    "agree": true,
+    "case": "W02-post-window-replay",
+    "detail": "capped RP vs uncapped results-run1.json",
+    "expected": "accept/reject",
+    "observed": "accept/reject"
+   },
+   {
+    "agree": true,
+    "case": "W07-expiry-boundary",
+    "detail": "capped RP vs uncapped results-run1.json",
+    "expected": "accept/reject",
+    "observed": "accept/reject"
+   },
+   {
+    "agree": true,
+    "case": "W08i-skew-behind",
+    "detail": "capped RP vs uncapped results-run1.json",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "W08ii-skew-ahead",
+    "detail": "capped RP vs uncapped results-run1.json",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "W09a-no-exp",
+    "detail": "capped RP vs uncapped results-run1.json",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "W09b-no-iat",
+    "detail": "capped RP vs uncapped results-run1.json",
+    "expected": "reject",
+    "observed": "reject"
+   }
+  ],
+  "HYB": [
+   {
+    "agree": true,
+    "case": "W01-in-window-replay",
+    "detail": "capped RP vs uncapped results-run1.json",
+    "expected": "accept/reject",
+    "observed": "accept/reject"
+   },
+   {
+    "agree": true,
+    "case": "W02-post-window-replay",
+    "detail": "capped RP vs uncapped results-run1.json",
+    "expected": "accept/reject",
+    "observed": "accept/reject"
+   },
+   {
+    "agree": true,
+    "case": "W07-expiry-boundary",
+    "detail": "capped RP vs uncapped results-run1.json",
+    "expected": "accept/reject",
+    "observed": "accept/reject"
+   },
+   {
+    "agree": true,
+    "case": "W06-state-loss+expiry",
+    "detail": "capped RP vs uncapped results-run1.json",
+    "expected": "accept/accept/reject",
+    "observed": "accept/accept/reject"
+   },
+   {
+    "agree": true,
+    "case": "W09c-hyb-no-exp",
+    "detail": "capped RP vs uncapped results-run1.json",
+    "expected": "reject",
+    "observed": "reject"
+   },
+   {
+    "agree": true,
+    "case": "W12-long-lived-replay",
+    "detail": "capped RP vs uncapped results-run1.json",
+    "expected": "accept/reject",
+    "observed": "accept/reject"
+   }
+  ]
+ }
+}
