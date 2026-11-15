@@ -154,5 +154,48 @@ run tests them, not just the shapes.
 - **W08 — clock skew, EXP (HYB inherits).** (i) R with iat
   T0 presented to an RP whose clock reads T0−120: iat sits
   120 s in the RP's future, past the 60 s leeway — prediction
-  reject (not yet valid). (i
-...[truncated 3396 chars]
+  reject (not yet valid). (ii) Same R presented to an RP whose clock reads
+  T0+330: its exp (T0+300) sits 30 s in the RP's past
+  though the receipt itself is fresh — prediction reject
+  (early expiry). Counts: clock trust — whether a skewed
+  RP fails closed in both directions. It does: both
+  directions reject, so a bad clock costs availability,
+  not safety.
+- **W09 — missing freshness material.** (a) EXP receipt
+  with `exp` removed, presented at T0+10: prediction
+  reject (clause (d) requires exp present). (b) EXP
+  receipt with `iat` removed: prediction reject. (c) HYB
+  receipt with `exp` removed: prediction reject. (d)
+  CHAL receipt carrying no `chal`: prediction reject.
+  (e) CHAL receipt naming a challenge this RP never
+  issued: prediction reject. (f) CHAL receipt answering
+  a challenge issued at T0, presented at T0+121 — past
+  the challenge's 120 s lifetime: prediction reject.
+  Counts: whether clause (d)'s presence checks are
+  real — a missing or dead field must reject, not pass
+  as an unchecked field.
+- **W10 — pair keying, HYB.** Present R (signer A, nonce
+  N) at T0+10; then present a receipt carrying the same
+  nonce N from a different signer at T0+20. Counts:
+  whether the store's key is the (signer, nonce) pair
+  or the nonce alone — a nonce-only key would reject
+  the second presentation and let one signer squat a
+  nonce against every other signer. Prediction:
+  accept/accept (the key is the pair).
+- **W11 — challenge restart, CHAL.** Issue a challenge
+  at T0+10; mint R answering it; restart the RP (the
+  issued-challenge table is lost); present R at T0+20.
+  Counts: whether CHAL fails closed when its state is
+  lost — the mirror of W03, where P6's lost state opens
+  the door. Prediction: reject (the challenge is
+  unknown to the restarted RP) — an availability cost,
+  not a hole: honest in-flight receipts are refused
+  until a fresh challenge is issued.
+- **W12 — long-lived replay, store intact, P6 and HYB.**
+  Accept R at T0+10; present R again at T0+30 days,
+  the store intact throughout. Counts: the store's
+  memory over long horizons — the complement of W03
+  and W06, where the store is wiped. Predictions:
+  accept, then reject, under both shapes (under P6 on
+  the recorded pair; under HYB on the recorded pair,
+  or, if the pair was pruned after expiry, on expiry).
